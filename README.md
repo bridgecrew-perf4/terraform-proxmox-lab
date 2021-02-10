@@ -4,7 +4,7 @@ This is to be used as a basis for future projects that will involve IaC.
 
 ## Quick Start
 
-Create a secret.tfvars file that contains the 'proxmox_username' and 'proxmox_password' variables and their values
+Create a terraform.tfvars file that contains the 'proxmox_username' and 'proxmox_password' variables and their values
 
 Initialize terraform in the directory
 ```

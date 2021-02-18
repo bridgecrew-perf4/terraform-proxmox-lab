@@ -18,7 +18,7 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "cloudinit-test" {
   name = "terraform-test-vm${count.index}"
   desc = "A test for using terraform and cloudinit"
-  count = 3
+  count = 2
 
   # Node name has to be the same name as within the cluster
   # this might not include the FQDN
@@ -28,7 +28,7 @@ resource "proxmox_vm_qemu" "cloudinit-test" {
   #pool = "pool0"
 
   # The template name to clone this vm from
-  clone = "Ubuntu-2004-Template"
+  clone = "Ubuntu-2004"
 
   # Activate QEMU agent for this VM
   agent = 1
@@ -61,7 +61,7 @@ resource "proxmox_vm_qemu" "cloudinit-test" {
 
   # Setup the ip address using cloud-init.
   # Keep in mind to use the CIDR notation for the ip.
-  ipconfig0 = "ip=dhcp"
+  #ipconfig0 = "ip=dhcp"
   #os_network_config = <<EOF
 #auto ens18
 #iface ens18 inet dhcp

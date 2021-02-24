@@ -28,7 +28,7 @@ resource "proxmox_vm_qemu" "cloudinit-test" {
   #pool = "pool0"
 
   # The template name to clone this vm from
-  clone = "Ubuntu-2004"
+  clone = "ubuntu-2004"
 
   # Activate QEMU agent for this VM
   agent = 1

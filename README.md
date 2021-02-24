@@ -5,6 +5,11 @@ This is to be used as a basis for future projects that will involve IaC.
 ## Quick Start
 
 Create a terraform.tfvars file that contains the 'proxmox_username' and 'proxmox_password' variables and their values
+```
+#terraform.tfvars
+proxmox_username = "user@pve"
+proxmox_password = "password"
+```
 
 Initialize terraform in the directory
 ```
@@ -25,4 +30,9 @@ terraform plan
 Apply the configuration and create the vms on proxmox server
 ```
 terraform apply
+```
+
+Tear down resources
+```
+terraform destroy
 ```

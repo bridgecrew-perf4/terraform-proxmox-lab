@@ -17,7 +17,7 @@ provider "proxmox" {
 
 resource "proxmox_vm_qemu" "cloudinit-test" {
   name = "terraform-test-vm${count.index}"
-  desc = "A test for using terraform and cloudinit"
+  desc = "An example config for using terraform and cloudinit on proxmox"
   count = 2
 
   # Node name has to be the same name as within the cluster
@@ -61,11 +61,7 @@ resource "proxmox_vm_qemu" "cloudinit-test" {
 
   # Setup the ip address using cloud-init.
   # Keep in mind to use the CIDR notation for the ip.
-  #ipconfig0 = "ip=dhcp"
-  #os_network_config = <<EOF
-#auto ens18
-#iface ens18 inet dhcp
-#EOF
+  ipconfig0 = "ip=dhcp"
 
 
   sshkeys = <<EOF

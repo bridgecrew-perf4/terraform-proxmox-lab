@@ -68,3 +68,7 @@ resource "proxmox_vm_qemu" "cloudinit-test" {
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCdCelzDG9KbJK8EfBe0/Lh9RblTokH8ncYm7+EjXf+tzCgj2oUToewuliYCFAzcwEKZP2d7fAJn7gFR1P8ZjDTNPFqvB6UwJr91KRhNQDKsRGotGpMLsD6CXHM4I96uJzlihIJ2bwApIauM8vxEOCo8Kq9cuCIHoPr+GE8m0LHMhQlj7gA91st6sG25ki4ZdPM7PfarNFq1nVEfPrJPpkqfO4m6DEKoNMcI9IiIMoXjQyhDzOfyf86M6f6wX0rH7pmu06wFX7psIVJFwfF71XzfMO7ia/OKzxyjsNafZsiXEyrT5xRZxeZHevrMVXxf+KWrF+ZhRhIxa3QyMYXDIrzFJP+6Z73tGiG0U0a7XyUmxjUC7+Sqv+8hbz6hcNqXfqa5qmFe+mLRi4VCXSXkmg2aIJyhFh0WpEGiJL2Aa7w/ZTotcxH8TXGbYHX0DXUBtB7cAthuk1A9ILc6oypjfdP2NTsjx7ZSf1xhpvnjXxVOl+c3aaKfFwslqbJwgZxNE8= kump@DESKTOP-DQ82LCJ
     EOF
 }
+
+output "client_ip" {
+  value = proxmox_vm_qemu.self.ssh_host
+}
